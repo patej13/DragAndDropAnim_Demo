@@ -20,8 +20,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             DragAndDropAnim_DemoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                   Greeting("Android", Modifier.padding(innerPadding))
-
+                   Greeting("", Modifier.padding(innerPadding))
+                    DragAndDropBoxes()
                 }
             }
         }
@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(text = "Hello $name!", modifier = modifier)
+    Text(text = "", modifier = modifier)
 }
 
 @Preview(showBackground = true)

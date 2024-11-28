@@ -18,13 +18,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        Orientation.Horizontal
         setContent {
             DragAndDropAnim_DemoTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                   Greeting("", Modifier.padding(innerPadding))
-                    DragAndDropBoxes()
-                }
+                DragAndDropBoxes()
             }
         }
     }
@@ -43,18 +39,3 @@ class MainActivity : ComponentActivity() {
 // ToDo 8: Add a button to reset the rect to the center of the screen
 // ToDo 9: Enable certain animation based on the drop event (like up or down)
 // ToDo 10: Make sure to commit for each one of the above and submit this individually
-
-
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(text = "", modifier = modifier)
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    DragAndDropAnim_DemoTheme {
-        Greeting("Android")
-    }
-}

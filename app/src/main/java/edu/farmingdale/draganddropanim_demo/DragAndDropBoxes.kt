@@ -31,6 +31,7 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Face
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -141,6 +142,9 @@ fun DragAndDropBoxes(modifier: Modifier = Modifier) {
                 repeatMode = RepeatMode.Restart
             )
         )
+        val center by animateIntOffsetAsState(
+            IntOffset(130, 300)
+        )
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -155,6 +159,11 @@ fun DragAndDropBoxes(modifier: Modifier = Modifier) {
                     .offset(pOffset.x.dp, pOffset.y.dp)
                     .rotate(rtatView)
             )
+        }
+        Button(onClick = {
+            IntOffset(200, 300)
+        }) {
+            Text(fontSize = 16.sp, text ="Center")
         }
     }
 }
